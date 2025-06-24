@@ -1,0 +1,64 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/accountdb
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root          # Use your actual username
+    password: root          # Use your actual password
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+  h2:
+    console:
+      enabled: false
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect   # MySQL dialect for Hibernate
+    hibernate:
+      ddl-auto: update      # Options: none, validate, update, create
+    show-sql: true
+    logging:
+      level:
+        com.zaxxer.hikari: DEBUG
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+    endpoint:
+      shutdown:
+        access: unrestricted
+    info:
+      env:
+        enabled: true
+
+  eureka:
+    instance:
+      preferIpAddress: true
+    client:
+      fetchRegistry: true
+      registerWithEureka: true
+      serviceUrl:
+        defaultZone: http://localhost:8070/eureka/
+
+  info:
+    app:
+      name: "accounts"
+      description: "smart fusion Accounts Application"
+      version: "1.0.0"
+
+logging:
+  level:
+    root: INFO
+    com.smartfusiontech.accounts.controller: DEBUG
+    com.smartfusiontech.accounts.service.impl: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"

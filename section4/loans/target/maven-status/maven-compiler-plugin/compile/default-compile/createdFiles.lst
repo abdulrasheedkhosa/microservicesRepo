@@ -1,0 +1,16 @@
+com\smartfusiontech\loans\LoansApplication.class
+com\smartfusiontech\loans\dto\ErrorResponseDto.class
+com\smartfusiontech\loans\dto\LoansDto.class
+com\smartfusiontech\loans\entity\Loans.class
+com\smartfusiontech\loans\exception\GlobalExceptionHandler.class
+com\smartfusiontech\loans\constants\LoansConstants.class
+com\smartfusiontech\loans\mapper\LoansMapper.class
+com\smartfusiontech\loans\dto\ResponseDto.class
+com\smartfusiontech\loans\exception\LoanAlreadyExistsException.class
+com\smartfusiontech\loans\audit\AuditAwareImpl.class
+com\smartfusiontech\loans\exception\ResourceNotFoundException.class
+com\smartfusiontech\loans\service\ILoansService.class
+com\smartfusiontech\loans\controller\LoansController.class
+com\smartfusiontech\loans\repository\LoansRepository.class
+com\smartfusiontech\loans\entity\BaseEntity.class
+com\smartfusiontech\loans\service\impl\LoansServiceImpl.class
